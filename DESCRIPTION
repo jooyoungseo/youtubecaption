@@ -20,12 +20,10 @@ Imports:
     stringr,
     writexl,
     reticulate,
-    lubridate,
     purrr,
     magrittr,
     tibble,
-    dplyr,
-    textstem
+    dplyr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1.9000
 Suggests: 

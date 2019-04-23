@@ -8,3 +8,4 @@
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
+* Please kindly ignore the previously submitted version which had a critical bug and now it has been solved.
