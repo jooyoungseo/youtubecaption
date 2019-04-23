@@ -40,7 +40,7 @@ Python module into R using
 
 ### R Package Installation
 
-#### Development Version
+### Development Version
 
 You can install the latest development version as follows:
 
