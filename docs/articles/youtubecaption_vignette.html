@@ -84,7 +84,7 @@
       <h1>How to Use Youtubecaption</h1>
                         <h4 class="author">JooYoung Seo</h4>
             
-            <h4 class="date">2019-04-23</h4>
+            <h4 class="date">2019-04-25</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jooyoungseo/youtubecaption/blob/master/vignettes/youtubecaption_vignette.Rmd"><code>vignettes/youtubecaption_vignette.Rmd</code></a></small>
       <div class="hidden name"><code>youtubecaption_vignette.Rmd</code></div>
@@ -140,26 +140,28 @@
 <p>Please use <code><a href="../reference/get_caption.html">get_caption()</a></code> function after loading <code>youtubecaption</code> package like below:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(youtubecaption)</a>
 <a class="sourceLine" id="cb3-2" title="2"></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="co"># Let's get the video caption out of Hadley Wickham's 'You can't do data</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="co"># science in a GUI':</span></a>
-<a class="sourceLine" id="cb3-5" title="5">url &lt;-<span class="st"> "https://www.youtube.com/watch?v=cpbtcsGE0OA"</span></a>
-<a class="sourceLine" id="cb3-6" title="6">caption &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_caption.html">get_caption</a></span>(url)</a>
-<a class="sourceLine" id="cb3-7" title="7">caption</a>
-<a class="sourceLine" id="cb3-8" title="8"></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co"># &gt; # A tibble: 1,420 x 5 &gt; segment_id text start duration vid &gt; &lt;int&gt; &lt;chr&gt;</span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="co"># &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &gt; 1 1 thank you for coming to a meeting ~ 7.13 8.32</span></a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="co"># cpbtcsGE0~ &gt; 2 2 in regards to data science GUI with 10.7 8.44 cpbtcsGE0~</span></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="co"># &gt; 3 3 happy with chief data scientist in~ 15.4 7.11 cpbtcsGE0~ &gt; 4 4</span></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="co"># studio as well as the member of th~ 19.1 7.23 cpbtcsGE0~ &gt; 5 5 Foundation</span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="co"># and an attempt professo~ 22.6 6 cpbtcsGE0~ &gt; 6 6 Stanford and at the</span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="co"># University of 26.4 6.48 cpbtcsGE0~ &gt; 7 7 Auckland he builds both</span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="co"># computatio~ 28.6 7.17 cpbtcsGE0~ &gt; 8 8 and cognitive tools to make data s~</span></a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="co"># 32.8 7.5 cpbtcsGE0~ &gt; 9 9 easier faster and more times his w~ 35.7 7.01</span></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="co"># cpbtcsGE0~ &gt; 10 10 includes various packages as well ~ 40.4 6.21</span></a>
-<a class="sourceLine" id="cb3-19" title="19"><span class="co"># cpbtcsGE0~ &gt; # ... with 1,410 more rows</span></a>
-<a class="sourceLine" id="cb3-20" title="20"></a>
-<a class="sourceLine" id="cb3-21" title="21"><span class="co"># Save the caption as an Excel file and open it right it away:</span></a>
-<a class="sourceLine" id="cb3-22" title="22"><span class="kw"><a href="../reference/get_caption.html">get_caption</a></span>(<span class="dt">url =</span> url, <span class="dt">savexl =</span> <span class="ot">TRUE</span>, <span class="dt">openxl =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co"># Let's get the video caption out of Hadley Wickham's "You can't do data science in a GUI":</span></a>
+<a class="sourceLine" id="cb3-4" title="4">url &lt;-<span class="st"> "https://www.youtube.com/watch?v=cpbtcsGE0OA"</span></a>
+<a class="sourceLine" id="cb3-5" title="5">caption &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_caption.html">get_caption</a></span>(url)</a>
+<a class="sourceLine" id="cb3-6" title="6">caption</a>
+<a class="sourceLine" id="cb3-7" title="7"></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; # A tibble: 1,420 x 5</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt;    segment_id text                                start duration vid       </span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt;         &lt;int&gt; &lt;chr&gt;                               &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;     </span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt;  1          1 thank you for coming to a meeting ~  7.13     8.32 cpbtcsGE0~</span></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt;  2          2 in regards to data science GUI with 10.7      8.44 cpbtcsGE0~</span></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt;  3          3 happy with chief data scientist in~ 15.4      7.11 cpbtcsGE0~</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt;  4          4 studio as well as the member of th~ 19.1      7.23 cpbtcsGE0~</span></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt;  5          5 Foundation and an attempt professo~ 22.6      6    cpbtcsGE0~</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt;  6          6 Stanford and at the University of   26.4      6.48 cpbtcsGE0~</span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt;  7          7 Auckland he builds both computatio~ 28.6      7.17 cpbtcsGE0~</span></a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt;  8          8 and cognitive tools to make data s~ 32.8      7.5  cpbtcsGE0~</span></a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt;  9          9 easier faster and more times his w~ 35.7      7.01 cpbtcsGE0~</span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; 10         10 includes various packages as well ~ 40.4      6.21 cpbtcsGE0~</span></a>
+<a class="sourceLine" id="cb3-21" title="21"><span class="co">#&gt; # ... with 1,410 more rows</span></a>
+<a class="sourceLine" id="cb3-22" title="22"></a>
+<a class="sourceLine" id="cb3-23" title="23"><span class="co"># Save the caption as an Excel file and open it right it away:</span></a>
+<a class="sourceLine" id="cb3-24" title="24"><span class="kw"><a href="../reference/get_caption.html">get_caption</a></span>(<span class="dt">url =</span> url, <span class="dt">savexl =</span> <span class="ot">TRUE</span>, <span class="dt">openxl =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 </div>
 </div>
   </div>
