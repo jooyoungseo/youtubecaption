@@ -59,7 +59,7 @@ install.packages('youtubecaption')
 
 Please use `get_caption()` function after loading `youtubecaption` package like below:
 
-```{r test, tidy=TRUE, eval=FALSE}
+```{r test, eval=FALSE}
 library(youtubecaption)
 
 # Let's get the video caption out of Hadley Wickham's "You can't do data science in a GUI":

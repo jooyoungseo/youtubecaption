@@ -1,5 +1,5 @@
 Package: youtubecaption
-Title: Downloading YouTube Subtitle Transcription in a Tidy Tibble Data_Frame
+Title: Downloading YouTube Subtitle Transcription in a Tidy 'Tibble' Data_Frame
 Version: 0.1.0
 Authors@R: c(
     person(given = "JooYoung",
@@ -8,7 +8,7 @@ Authors@R: c(
            email = "jooyoung@psu.edu",
            comment = c(ORCID = "0000-0002-4064-6012")), 
     person("Soyoung", "Choi", role = "aut", email = "sxc940@psu.edu", comment = c(ORCID = "0000-0002-0998-3352")))
-Description: Although there exist some R packages tailored for YouTube API (e.g., 'tuber'), downloading YouTube video subtitle (i.e., caption) in a tidy form has never been a low-hanging fruit. Using 'youtube-transcript-api' Python package under the hood, this R package provides users with a convenient way of parsing and converting a desired YouTube caption into a handy tibble data_frame object. Furthermore, users can easily save a desired YouTube caption data as a tidy Excel file without advanced programming background knowledge.
+Description: Although there exist some R packages tailored for YouTube API (e.g., 'tuber'), downloading YouTube video subtitle (i.e., caption) in a tidy form has never been a low-hanging fruit. Using 'youtube-transcript-api Python package' under the hood, this R package provides users with a convenient way of parsing and converting a desired YouTube caption into a handy 'tibble' data_frame object. Furthermore, users can easily save a desired YouTube caption data as a tidy Excel file without advanced programming background knowledge.
 SystemRequirements: Anaconda (https://www.anaconda.com/download/)
 License: GPL-3
 VignetteBuilder: knitr
