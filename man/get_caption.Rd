@@ -4,14 +4,16 @@
 \alias{get_caption}
 \title{Obtaining YouTube video caption/subtitle in a tidy tibble form.}
 \usage{
-get_caption(url = NULL, savexl = FALSE, openxl = FALSE)
+get_caption(url = NULL, savexl = FALSE, openxl = FALSE, path = ".")
 }
 \arguments{
 \item{url}{A string value for a single YouTube video link URL. A typical form should start with "https://www.youtube.com/watch?v=" followed by a unique video ID.}
 
-\item{savexl}{A logical value for determining whether or not to save the obtained tidy YouTube caption data as an Excel file. The default is FALSE which does not save it as a file. If set to TRUE, a file named "YouTube_caption_\code{videoID}.xlsx" is saved in your current working directory.}
+\item{savexl}{A logical value for determining whether or not to save the obtained tidy YouTube caption data as an Excel file. The default is FALSE which does not save it as a file. If set to TRUE, a file named "YouTube_caption_\code{videoID}.xlsx" is saved in your specified directory (the default is your current working directory).}
 
 \item{openxl}{A logical value for determining whether or not to open, if any, the saved YouTube_caption Excel file in your working directory. The default is FALSE. TRUE works only when the preceding argument (i.e., savexl) is set to TRUE.}
+
+\item{path}{A character vector of full path names; the default corresponds to the working directory, \link[base]{getwd}. Tilde expansion (see \link[base]{path.expand}) is performed. Missing values will be ignored.}
 }
 \value{
 tibble (advanced data.frame) object for a YouTube video caption will be returned.
@@ -26,17 +28,15 @@ See example below.
 }
 \examples{
 \donttest{
-# Changing working directory to temp for the demonstration purpose only.
-setwd(tempdir())
-
 library(youtubecaption)
 # Let's get the video caption out of Hadley Wickham's "You can't do data science in a GUI":
 url <- "https://www.youtube.com/watch?v=cpbtcsGE0OA"
 caption <- get_caption(url)
 caption
 
-# Save the caption as an Excel file and open it right it away:
-get_caption(url = url, savexl = TRUE, openxl = TRUE)
+# Save the caption as an Excel file and open it right it away
+## Changing path to temp for the demonstration purpose only:
+get_caption(url = url, savexl = TRUE, openxl = TRUE, path = tempdir())
 }
 }
 \references{

@@ -8,8 +8,9 @@
 
 #' @export get_caption
 #' @param url A string value for a single YouTube video link URL. A typical form should start with "https://www.youtube.com/watch?v=" followed by a unique video ID.
-#' @param savexl A logical value for determining whether or not to save the obtained tidy YouTube caption data as an Excel file. The default is FALSE which does not save it as a file. If set to TRUE, a file named "YouTube_caption_`videoID`.xlsx" is saved in your current working directory.
+#' @param savexl A logical value for determining whether or not to save the obtained tidy YouTube caption data as an Excel file. The default is FALSE which does not save it as a file. If set to TRUE, a file named "YouTube_caption_`videoID`.xlsx" is saved in your specified directory (the default is your current working directory).
 #' @param openxl A logical value for determining whether or not to open, if any, the saved YouTube_caption Excel file in your working directory. The default is FALSE. TRUE works only when the preceding argument (i.e., savexl) is set to TRUE.
+#' @param path A character vector of full path names; the default corresponds to the working directory, \link[base]{getwd}. Tilde expansion (see \link[base]{path.expand}) is performed. Missing values will be ignored.
 
 #' @details
 #' See example below.
@@ -18,17 +19,15 @@
 
 #' @examples
 #' \donttest{
-#' # Changing working directory to temp for the demonstration purpose only.
-#' setwd(tempdir())
-#' 
 #' library(youtubecaption)
 #' # Let's get the video caption out of Hadley Wickham's "You can't do data science in a GUI":
 #' url <- "https://www.youtube.com/watch?v=cpbtcsGE0OA"
 #' caption <- get_caption(url)
 #' caption
 #' 
-#' # Save the caption as an Excel file and open it right it away:
-#' get_caption(url = url, savexl = TRUE, openxl = TRUE)
+#' # Save the caption as an Excel file and open it right it away
+#' ## Changing path to temp for the demonstration purpose only:
+#' get_caption(url = url, savexl = TRUE, openxl = TRUE, path = tempdir())
 #' }
 
 #' @author JooYoung Seo, \email{jooyoung@psu.edu}
@@ -37,7 +36,7 @@
 #' @references \url{https://pypi.org/project/youtube-transcript-api/}
 
 get_caption <-
-function(url = NULL, savexl = FALSE, openxl = FALSE) {  # Function starts:
+function(url = NULL, savexl = FALSE, openxl = FALSE, path = ".") {  # Function starts:
 
   if(is.null(url)) {
     stop("Please pass the first argument (YouTube Video URL).")
@@ -71,7 +70,7 @@ function(url = NULL, savexl = FALSE, openxl = FALSE) {  # Function starts:
       dplyr::mutate(vid = vid)
 
       if(savexl) {
-        file_name <- paste0("YT_caption_", vid, ".xlsx")
+        file_name <- paste0(path, "/YT_caption_", vid, ".xlsx")
         writexl::write_xlsx(caption_df, file_name)
       }
 
