@@ -64,7 +64,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">youtubecaption</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -126,7 +126,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_caption</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>savexl</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>openxl</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>get_caption</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>savexl</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>openxl</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>())</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -137,11 +138,15 @@
     </tr>
     <tr>
       <th>savexl</th>
-      <td><p>A logical value for determining whether or not to save the obtained tidy YouTube caption data as an Excel file. The default is FALSE which does not save it as a file. If set to TRUE, a file named "YouTube_caption_<code>videoID</code>.xlsx" is saved in your current working directory.</p></td>
+      <td><p>A logical value for determining whether or not to save the obtained tidy YouTube caption data as an Excel file. The default is FALSE which does not save it as a file. If set to TRUE, a file named "YouTube_caption_<code>videoID</code>.xlsx" is saved in your specified directory (the default is your current working directory).</p></td>
     </tr>
     <tr>
       <th>openxl</th>
       <td><p>A logical value for determining whether or not to open, if any, the saved YouTube_caption Excel file in your working directory. The default is FALSE. TRUE works only when the preceding argument (i.e., savexl) is set to TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>path</th>
+      <td><p>A character vector of full path names; the default corresponds to the working directory, <a href='https://rdrr.io/r/base/getwd.html'>getwd</a>. Tilde expansion (see <a href='https://rdrr.io/r/base/path.expand.html'>path.expand</a>) is performed. Missing values will be ignored.</p></td>
     </tr>
     </table>
     
@@ -160,10 +165,7 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Changing working directory to temp for the demonstration purpose only.</span>
-<span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>())
-
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>youtubecaption</span>)
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>youtubecaption</span>)
 <span class='co'># Let's get the video caption out of Hadley Wickham's "You can't do data science in a GUI":</span>
 <span class='no'>url</span> <span class='kw'>&lt;-</span> <span class='st'>"https://www.youtube.com/watch?v=cpbtcsGE0OA"</span>
 <span class='no'>caption</span> <span class='kw'>&lt;-</span> <span class='fu'>get_caption</span>(<span class='no'>url</span>)
@@ -181,8 +183,9 @@
 #&gt;  9          9 easier faster and more times his work    35.7      7.01 cpbtcsGE0~
 #&gt; 10         10 includes various packages as well as     40.4      6.21 cpbtcsGE0~
 #&gt; # ... with 1,410 more rows</div><div class='input'>
-<span class='co'># Save the caption as an Excel file and open it right it away:</span>
-<span class='fu'>get_caption</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url</span>, <span class='kw'>savexl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>openxl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; # A tibble: 1,420 x 5
+<span class='co'># Save the caption as an Excel file and open it right it away</span>
+<span class='co'>## Changing path to temp for the demonstration purpose only:</span>
+<span class='fu'>get_caption</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url</span>, <span class='kw'>savexl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>openxl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>())</div><div class='output co'>#&gt; # A tibble: 1,420 x 5
 #&gt;    segment_id text                                     start duration vid       
 #&gt;         &lt;int&gt; &lt;chr&gt;                                    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;     
 #&gt;  1          1 thank you for coming to a meeting today   7.13     8.32 cpbtcsGE0~
