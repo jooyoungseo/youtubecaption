@@ -3,6 +3,12 @@
 
 <!-- badges: start -->
 
+[![License: GPL
+v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/youtubecaption)](https://cran.r-project.org/package=youtubecaption)
+[![Total
+Downloads](https://cranlogs.r-pkg.org/badges/grand-total/youtubecaption?color=orange)](https://cranlogs.r-pkg.org/badges/grand-total/youtubecaption)
 [![Travis build
 status](https://travis-ci.org/jooyoungseo/youtubecaption.svg?branch=master)](https://travis-ci.org/jooyoungseo/youtubecaption)
 [![AppVeyor build

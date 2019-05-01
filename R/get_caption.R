@@ -36,7 +36,7 @@
 #' @references \url{https://pypi.org/project/youtube-transcript-api/}
 
 get_caption <-
-function(url = NULL, savexl = FALSE, openxl = FALSE, path = ".") {  # Function starts:
+function(url = NULL, savexl = FALSE, openxl = FALSE, path = getwd()) {  # Function starts:
 
   if(is.null(url)) {
     stop("Please pass the first argument (YouTube Video URL).")
