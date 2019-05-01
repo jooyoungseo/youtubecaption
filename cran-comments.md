@@ -7,4 +7,8 @@
 
 0 errors | 0 warnings | 1 note
 
-* This is a new release.
+# youtubecaption 0.1.1
+
+* The following includes a critical bug fix that has not been caught in CRAN submission. Even though it has been newly released, it would be appreciated if the following fix is released in CRAN version so that users are not disoriented.
+
+* A critical bug that the third option `openxl` of `get_caption()` does not work properly has been resolved.
