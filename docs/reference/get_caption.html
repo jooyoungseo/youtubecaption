@@ -8,22 +8,25 @@
 
 <title>Obtaining YouTube video caption/subtitle in a tidy tibble form. — get_caption • youtubecaption</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -31,10 +34,11 @@
 
 
 
-<meta property="og:title" content="Obtaining YouTube video caption/subtitle in a tidy tibble form. — get_caption" />
 
+<meta property="og:title" content="Obtaining YouTube video caption/subtitle in a tidy tibble form. — get_caption" />
 <meta property="og:description" content="Use this function for downloading a desired YouTube video caption in a tidy tibble data_frame form and save it as an Excel file in your current working directory." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -46,6 +50,7 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
 
 
   </head>
@@ -64,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">youtubecaption</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -95,7 +100,6 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/jooyoungseo/youtubecaption">
@@ -110,6 +114,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -121,14 +126,11 @@
     </div>
 
     <div class="ref-description">
-    
     <p>Use this function for downloading a desired YouTube video caption in a tidy tibble data_frame form and save it as an Excel file in your current working directory.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>get_caption</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>savexl</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>openxl</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>())</pre>
-    
+    <pre class="usage"><span class='fu'>get_caption</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>savexl</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>openxl</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>())</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -149,68 +151,52 @@
       <td><p>A character vector of full path names; the default corresponds to the working directory, <a href='https://rdrr.io/r/base/getwd.html'>getwd</a>. Tilde expansion (see <a href='https://rdrr.io/r/base/path.expand.html'>path.expand</a>) is performed. Missing values will be ignored.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>tibble (advanced data.frame) object for a YouTube video caption will be returned.</p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>get_caption</p>
 <p>See example below.</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p><a href='https://pypi.org/project/youtube-transcript-api/'>https://pypi.org/project/youtube-transcript-api/</a></p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>youtubecaption</span>)
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>youtubecaption</span>)
 <span class='co'># Let's get the video caption out of Hadley Wickham's "You can't do data science in a GUI":</span>
 <span class='no'>url</span> <span class='kw'>&lt;-</span> <span class='st'>"https://www.youtube.com/watch?v=cpbtcsGE0OA"</span>
-<span class='no'>caption</span> <span class='kw'>&lt;-</span> <span class='fu'>get_caption</span>(<span class='no'>url</span>)
-<span class='no'>caption</span></div><div class='output co'>#&gt; # A tibble: 1,420 x 5
-#&gt;    segment_id text                                     start duration vid       
-#&gt;         &lt;int&gt; &lt;chr&gt;                                    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;     
-#&gt;  1          1 thank you for coming to a meeting today   7.13     8.32 cpbtcsGE0~
-#&gt;  2          2 in regards to data science GUI with      10.7      8.44 cpbtcsGE0~
-#&gt;  3          3 happy with chief data scientist in our   15.4      7.11 cpbtcsGE0~
-#&gt;  4          4 studio as well as the member of the our  19.1      7.23 cpbtcsGE0~
-#&gt;  5          5 Foundation and an attempt professor at   22.6      6    cpbtcsGE0~
-#&gt;  6          6 Stanford and at the University of        26.4      6.48 cpbtcsGE0~
-#&gt;  7          7 Auckland he builds both computational    28.6      7.17 cpbtcsGE0~
-#&gt;  8          8 and cognitive tools to make data science 32.8      7.5  cpbtcsGE0~
-#&gt;  9          9 easier faster and more times his work    35.7      7.01 cpbtcsGE0~
-#&gt; 10         10 includes various packages as well as     40.4      6.21 cpbtcsGE0~
-#&gt; # ... with 1,410 more rows</div><div class='input'>
+<span class='no'>caption</span> <span class='kw'>&lt;-</span> <span class='fu'>get_caption</span>(<span class='no'>url</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Python 'C:\Anaconda3\envs\R_youtube_caption\python.exe' was requested but 'C:/Anaconda3/envs/R_youtube_caption/python.exe' was loaded instead (see reticulate::py_config() for more information)</span></div><div class='output co'>#&gt; <span class='error'>Error in py_call_impl(callable, dots$args, dots$keywords): CouldNotRetrieveTranscript: Could not get the transcript for the video https://www.youtube.com/watch?v=cpbtcsGE0OA! Most likely subtitles have been disabled by the uploader or the video is no longer available.</span>
+#&gt; <span class='error'></span>
+#&gt; <span class='error'>Detailed traceback: </span>
+#&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 69, in get_transcripts</span>
+#&gt; <span class='error'>    raise exception</span>
+#&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 66, in get_transcripts</span>
+#&gt; <span class='error'>    data[video_id] = cls.get_transcript(video_id, languages, proxies)</span>
+#&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 100, in get_transcript</span>
+#&gt; <span class='error'>    raise YouTubeTranscriptApi.CouldNotRetrieveTranscript(video_id)</span></div><div class='input'><span class='no'>caption</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'caption' not found</span></div><div class='input'>
 <span class='co'># Save the caption as an Excel file and open it right it away</span>
 <span class='co'>## Changing path to temp for the demonstration purpose only:</span>
-<span class='fu'>get_caption</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url</span>, <span class='kw'>savexl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>openxl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>())</div><div class='output co'>#&gt; # A tibble: 1,420 x 5
-#&gt;    segment_id text                                     start duration vid       
-#&gt;         &lt;int&gt; &lt;chr&gt;                                    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;     
-#&gt;  1          1 thank you for coming to a meeting today   7.13     8.32 cpbtcsGE0~
-#&gt;  2          2 in regards to data science GUI with      10.7      8.44 cpbtcsGE0~
-#&gt;  3          3 happy with chief data scientist in our   15.4      7.11 cpbtcsGE0~
-#&gt;  4          4 studio as well as the member of the our  19.1      7.23 cpbtcsGE0~
-#&gt;  5          5 Foundation and an attempt professor at   22.6      6    cpbtcsGE0~
-#&gt;  6          6 Stanford and at the University of        26.4      6.48 cpbtcsGE0~
-#&gt;  7          7 Auckland he builds both computational    28.6      7.17 cpbtcsGE0~
-#&gt;  8          8 and cognitive tools to make data science 32.8      7.5  cpbtcsGE0~
-#&gt;  9          9 easier faster and more times his work    35.7      7.01 cpbtcsGE0~
-#&gt; 10         10 includes various packages as well as     40.4      6.21 cpbtcsGE0~
-#&gt; # ... with 1,410 more rows</div></pre>
+<span class='fu'>get_caption</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url</span>, <span class='kw'>savexl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>openxl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>())</div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='error'>Error in py_call_impl(callable, dots$args, dots$keywords): CouldNotRetrieveTranscript: Could not get the transcript for the video https://www.youtube.com/watch?v=cpbtcsGE0OA! Most likely subtitles have been disabled by the uploader or the video is no longer available.</span>
+#&gt; <span class='error'></span>
+#&gt; <span class='error'>Detailed traceback: </span>
+#&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 69, in get_transcripts</span>
+#&gt; <span class='error'>    raise exception</span>
+#&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 66, in get_transcripts</span>
+#&gt; <span class='error'>    data[video_id] = cls.get_transcript(video_id, languages, proxies)</span>
+#&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 100, in get_transcript</span>
+#&gt; <span class='error'>    raise YouTubeTranscriptApi.CouldNotRetrieveTranscript(video_id)</span></div><div class='input'># }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-
       <li><a href="#details">Details</a></li>
-
       <li><a href="#references">References</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
@@ -220,19 +206,23 @@
   </div>
 </div>
 
+
       <footer>
       <div class="copyright">
   <p>Developed by JooYoung Seo, Soyoung Choi.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

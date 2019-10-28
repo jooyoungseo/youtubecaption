@@ -1,6 +1,6 @@
-pandoc: 2.7.2
-pkgdown: 1.3.0.9000
-pkgdown_sha: 83f2afb5d2ec85abe29bfd8d67408cdf2bb55f03
+pandoc: 2.2.3.2
+pkgdown: 1.4.1.9000
+pkgdown_sha: 7020a7ae5b6db1193de41964cd8f34eeba3aa716
 articles:
   youtubecaption_vignette: youtubecaption_vignette.html
 
