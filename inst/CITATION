@@ -1,4 +1,4 @@
-citHeader("To cite mboxr in publications use:")
+citHeader("To cite youtubecaption in publications use:")
 
 year = version$year
 vers = paste('R package version', meta$Version)
