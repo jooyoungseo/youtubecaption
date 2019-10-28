@@ -9,6 +9,6 @@ citEntry(
   author   = Filter(function(p) 'aut' %in% p$role, as.person(meta$Author)),
   year     = year,
   note = vers,
-  url      = meta$URL,
+  url      = "https://CRAN.R-project.org/package=youtubecaption",
   textVersion = paste('JooYoung Seo & Soyoung Choi (', year, '). youtubecaption: ', meta$Title, '. ', vers, '.', sep = '')
 )

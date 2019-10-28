@@ -1,3 +1,8 @@
+# youtubecaption 0.1.2
+
+* `CITATION` file has been added.
+
+
 # youtubecaption 0.1.1
 
 * A critical bug that the third option `openxl` of `get_caption()` does not work properly has been resolved.

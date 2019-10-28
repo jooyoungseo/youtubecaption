@@ -4,8 +4,7 @@
 \alias{get_caption}
 \title{Obtaining YouTube video caption/subtitle in a tidy tibble form.}
 \usage{
-get_caption(url = NULL, savexl = FALSE, openxl = FALSE,
-  path = getwd())
+get_caption(url = NULL, savexl = FALSE, openxl = FALSE, path = getwd())
 }
 \arguments{
 \item{url}{A string value for a single YouTube video link URL. A typical form should start with "https://www.youtube.com/watch?v=" followed by a unique video ID.}
