@@ -1,9 +1,0 @@
-^README\.Rmd$
-^\.travis\.yml$
-^appveyor\.yml$
-^codecov\.yml$
-^_pkgdown\.yml$
-^docs$
-^pkgdown$
-^cran-comments\.md$
-^CRAN-RELEASE$

@@ -1,0 +1,14 @@
+citHeader("To cite mboxr in publications use:")
+
+year = version$year
+vers = paste('R package version', meta$Version)
+
+citEntry(
+  entry    = "manual",
+  title    = paste('youtubecaption:', meta$Title),
+  author   = Filter(function(p) 'aut' %in% p$role, as.person(meta$Author)),
+  year     = year,
+  note = vers,
+  url      = meta$URL,
+  textVersion = paste('JooYoung Seo & Soyoung Choi (', year, '). youtubecaption: ', meta$Title, '. ', vers, '.', sep = '')
+)
