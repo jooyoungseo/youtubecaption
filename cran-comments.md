@@ -7,6 +7,7 @@
 
 0 errors | 0 warnings | 1 note
 
-# youtubecaption 0.1.2
+# youtubecaption 0.1.3
 
-* `CITATION` file has been added.
+* Fixed CITATION entries.
+

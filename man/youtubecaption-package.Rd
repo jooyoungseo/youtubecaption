@@ -4,7 +4,7 @@
 \name{youtubecaption-package}
 \alias{youtubecaption}
 \alias{youtubecaption-package}
-\title{youtubecaption: Downloading YouTube Subtitle Transcription in a Tidy Tibble Data_Frame}
+\title{youtubecaption: Downloading YouTube Subtitle Transcription in a Tidy Tibble Data Frame}
 \description{
 Although there exist some R packages tailored for YouTube API (e.g., 'tuber'), downloading YouTube video subtitle (i.e., caption) in a tidy form has never been a low-hanging fruit. Using 'youtube-transcript-api Python package' under the hood, this R package provides users with a convenient way of parsing and converting a desired YouTube caption into a handy 'tibble' data_frame object. Furthermore, users can easily save a desired YouTube caption data as a tidy Excel file without advanced programming background knowledge.
 }

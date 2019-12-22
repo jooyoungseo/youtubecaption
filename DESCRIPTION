@@ -25,7 +25,7 @@ Imports:
     tibble,
     dplyr
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.99.9001
+RoxygenNote: 7.0.2
 Suggests: 
     knitr,
     rmarkdown,
