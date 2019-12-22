@@ -1,5 +1,5 @@
 Package: youtubecaption
-Title: Downloading YouTube Subtitle Transcription in a Tidy Tibble Data_Frame
+Title: Downloading YouTube Subtitle Transcription in a Tidy Tibble Data Frame
 Version: 0.1.2
 Authors@R: c(
     person(given = "JooYoung",

@@ -1,5 +1,7 @@
 ---
-output: github_document
+output:
+  bookdown::github_document2:
+    html_preview: false
 ---
 
 ```{r, include = FALSE}
