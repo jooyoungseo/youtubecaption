@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">youtubecaption</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
@@ -168,7 +168,7 @@
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>youtubecaption</span>)
 <span class='co'># Let's get the video caption out of Hadley Wickham's "You can't do data science in a GUI":</span>
 <span class='no'>url</span> <span class='kw'>&lt;-</span> <span class='st'>"https://www.youtube.com/watch?v=cpbtcsGE0OA"</span>
-<span class='no'>caption</span> <span class='kw'>&lt;-</span> <span class='fu'>get_caption</span>(<span class='no'>url</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Python 'C:\Anaconda3\envs\R_youtube_caption\python.exe' was requested but 'C:/Anaconda3/envs/R_youtube_caption/python.exe' was loaded instead (see reticulate::py_config() for more information)</span></div><div class='output co'>#&gt; <span class='error'>Error in py_call_impl(callable, dots$args, dots$keywords): CouldNotRetrieveTranscript: Could not get the transcript for the video https://www.youtube.com/watch?v=cpbtcsGE0OA! Most likely subtitles have been disabled by the uploader or the video is no longer available.</span>
+<span class='no'>caption</span> <span class='kw'>&lt;-</span> <span class='fu'>get_caption</span>(<span class='no'>url</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='error'>Error in py_call_impl(callable, dots$args, dots$keywords): CouldNotRetrieveTranscript: Could not get the transcript for the video https://www.youtube.com/watch?v=cpbtcsGE0OA! Most likely subtitles have been disabled by the uploader or the video is no longer available.</span>
 #&gt; <span class='error'></span>
 #&gt; <span class='error'>Detailed traceback: </span>
 #&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 69, in get_transcripts</span>
@@ -190,7 +190,7 @@
 #&gt; <span class='error'>    raise YouTubeTranscriptApi.CouldNotRetrieveTranscript(video_id)</span></div><div class='input'># }
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
