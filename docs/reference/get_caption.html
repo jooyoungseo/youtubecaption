@@ -168,26 +168,36 @@
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>youtubecaption</span>)
 <span class='co'># Let's get the video caption out of Hadley Wickham's "You can't do data science in a GUI":</span>
 <span class='no'>url</span> <span class='kw'>&lt;-</span> <span class='st'>"https://www.youtube.com/watch?v=cpbtcsGE0OA"</span>
-<span class='no'>caption</span> <span class='kw'>&lt;-</span> <span class='fu'>get_caption</span>(<span class='no'>url</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='error'>Error in py_call_impl(callable, dots$args, dots$keywords): CouldNotRetrieveTranscript: Could not get the transcript for the video https://www.youtube.com/watch?v=cpbtcsGE0OA! Most likely subtitles have been disabled by the uploader or the video is no longer available.</span>
-#&gt; <span class='error'></span>
-#&gt; <span class='error'>Detailed traceback: </span>
-#&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 69, in get_transcripts</span>
-#&gt; <span class='error'>    raise exception</span>
-#&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 66, in get_transcripts</span>
-#&gt; <span class='error'>    data[video_id] = cls.get_transcript(video_id, languages, proxies)</span>
-#&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 100, in get_transcript</span>
-#&gt; <span class='error'>    raise YouTubeTranscriptApi.CouldNotRetrieveTranscript(video_id)</span></div><div class='input'><span class='no'>caption</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'caption' not found</span></div><div class='input'>
+<span class='no'>caption</span> <span class='kw'>&lt;-</span> <span class='fu'>get_caption</span>(<span class='no'>url</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='input'><span class='no'>caption</span></div><div class='output co'>#&gt; # A tibble: 1,420 x 5
+#&gt;    segment_id text                                     start duration vid       
+#&gt;         &lt;int&gt; &lt;chr&gt;                                    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;     
+#&gt;  1          1 thank you for coming to a meeting today   7.13     8.32 cpbtcsGE0~
+#&gt;  2          2 in regards to data science GUI with      10.7      8.44 cpbtcsGE0~
+#&gt;  3          3 happy with chief data scientist in our   15.4      7.11 cpbtcsGE0~
+#&gt;  4          4 studio as well as the member of the our  19.1      7.23 cpbtcsGE0~
+#&gt;  5          5 Foundation and an attempt professor at   22.6      6    cpbtcsGE0~
+#&gt;  6          6 Stanford and at the University of        26.4      6.48 cpbtcsGE0~
+#&gt;  7          7 Auckland he builds both computational    28.6      7.17 cpbtcsGE0~
+#&gt;  8          8 and cognitive tools to make data science 32.8      7.5  cpbtcsGE0~
+#&gt;  9          9 easier faster and more times his work    35.7      7.01 cpbtcsGE0~
+#&gt; 10         10 includes various packages as well as     40.4      6.21 cpbtcsGE0~
+#&gt; # ... with 1,410 more rows</div><div class='input'>
 <span class='co'># Save the caption as an Excel file and open it right it away</span>
 <span class='co'>## Changing path to temp for the demonstration purpose only:</span>
-<span class='fu'>get_caption</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url</span>, <span class='kw'>savexl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>openxl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>())</div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='error'>Error in py_call_impl(callable, dots$args, dots$keywords): CouldNotRetrieveTranscript: Could not get the transcript for the video https://www.youtube.com/watch?v=cpbtcsGE0OA! Most likely subtitles have been disabled by the uploader or the video is no longer available.</span>
-#&gt; <span class='error'></span>
-#&gt; <span class='error'>Detailed traceback: </span>
-#&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 69, in get_transcripts</span>
-#&gt; <span class='error'>    raise exception</span>
-#&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 66, in get_transcripts</span>
-#&gt; <span class='error'>    data[video_id] = cls.get_transcript(video_id, languages, proxies)</span>
-#&gt; <span class='error'>  File "C:\Anaconda3\envs\R_youtube_caption\lib\site-packages\youtube_transcript_api\_api.py", line 100, in get_transcript</span>
-#&gt; <span class='error'>    raise YouTubeTranscriptApi.CouldNotRetrieveTranscript(video_id)</span></div><div class='input'># }
+<span class='fu'>get_caption</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url</span>, <span class='kw'>savexl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>openxl</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>())</div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; <span class='warning'>Warning: path[1]="C:\Anaconda3\envs\bookworm/python.exe": The system cannot find the file specified</span></div><div class='output co'>#&gt; # A tibble: 1,420 x 5
+#&gt;    segment_id text                                     start duration vid       
+#&gt;         &lt;int&gt; &lt;chr&gt;                                    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;     
+#&gt;  1          1 thank you for coming to a meeting today   7.13     8.32 cpbtcsGE0~
+#&gt;  2          2 in regards to data science GUI with      10.7      8.44 cpbtcsGE0~
+#&gt;  3          3 happy with chief data scientist in our   15.4      7.11 cpbtcsGE0~
+#&gt;  4          4 studio as well as the member of the our  19.1      7.23 cpbtcsGE0~
+#&gt;  5          5 Foundation and an attempt professor at   22.6      6    cpbtcsGE0~
+#&gt;  6          6 Stanford and at the University of        26.4      6.48 cpbtcsGE0~
+#&gt;  7          7 Auckland he builds both computational    28.6      7.17 cpbtcsGE0~
+#&gt;  8          8 and cognitive tools to make data science 32.8      7.5  cpbtcsGE0~
+#&gt;  9          9 easier faster and more times his work    35.7      7.01 cpbtcsGE0~
+#&gt; 10         10 includes various packages as well as     40.4      6.21 cpbtcsGE0~
+#&gt; # ... with 1,410 more rows</div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

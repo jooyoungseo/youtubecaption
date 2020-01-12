@@ -95,6 +95,6 @@ caption
 #> 10         10 includes various packages as well ~ 40.4      6.21 cpbtcsGE0~
 #> # ... with 1,410 more rows
 
-# Save the caption as an Excel file and open it right it away:
+# Save the caption as an Excel file and open it right away:
 get_caption(url = url, savexl = TRUE, openxl = TRUE)
 ```
