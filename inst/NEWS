@@ -1,3 +1,9 @@
+# youtubecaption 1.0.0
+
+* Added a new argument `language` for `get_caption()` function (#1). You can now pass two-character language code; it is set to "en" (English) by default.
+* Cleaned up code indents for better readability.
+
+
 # youtubecaption 0.1.3
 
 * Fixed CITATION entries.
