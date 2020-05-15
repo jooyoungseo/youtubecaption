@@ -4,10 +4,18 @@
 \alias{get_caption}
 \title{Obtaining YouTube video caption/subtitle in a tidy tibble form.}
 \usage{
-get_caption(url = NULL, savexl = FALSE, openxl = FALSE, path = getwd())
+get_caption(
+  url = NULL,
+  language = "en",
+  savexl = FALSE,
+  openxl = FALSE,
+  path = getwd()
+)
 }
 \arguments{
 \item{url}{A string value for a single YouTube video link URL. A typical form should start with "https://www.youtube.com/watch?v=" followed by a unique video ID.}
+
+\item{language}{two-character language code for the video URL. Set to "en" (English) by default. You can change this to fit with your needs (e.g., "ko" for Korean, "de" for German, etc.).}
 
 \item{savexl}{A logical value for determining whether or not to save the obtained tidy YouTube caption data as an Excel file. The default is FALSE which does not save it as a file. If set to TRUE, a file named "YouTube_caption_\code{videoID}.xlsx" is saved in your specified directory (the default is your current working directory).}
 
@@ -38,6 +46,7 @@ caption
 ## Changing path to temp for the demonstration purpose only:
 get_caption(url = url, savexl = TRUE, openxl = TRUE, path = tempdir())
 }
+
 }
 \references{
 \url{https://pypi.org/project/youtube-transcript-api/}
